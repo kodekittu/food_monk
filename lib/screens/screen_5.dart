@@ -47,9 +47,7 @@ class _ResultPageState extends State<ResultPage> {
                     child: Text("see your result".toUpperCase(),
                       style: TextStyle(fontSize: 26),
                     ),
-                    onPressed: () {
-                      Navigator.pushNamed(context, shareRoute);
-                    },
+                    onPressed: () {},
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0),
                     ),
@@ -63,7 +61,7 @@ class _ResultPageState extends State<ResultPage> {
               maxRadius: 100,
             ),
             SizedBox(height: data.size.height * 0.04),
-            Text("${widget.value}" + "ZONE".toUpperCase(),
+            Text("${widget.value}" + " ZONE".toUpperCase(),
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),),
             Padding(
               padding: const EdgeInsets.all(30.0),

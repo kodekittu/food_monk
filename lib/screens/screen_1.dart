@@ -26,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           children: <Widget>[
             SizedBox(height: data.size.height * 0.22),
-            Text("j d s d s sdc c s ca", style: TextStyle(
+            Text("FOODMONK Task", style: TextStyle(
                 color: Colors.white70,
                 fontSize: 30.0,
                 fontWeight: FontWeight.bold
