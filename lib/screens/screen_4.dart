@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodmonk/router.dart';
+import 'package:foodmonk/screens/screen_5.dart';
 
 class QuestionsPage extends StatefulWidget {
   @override
@@ -8,6 +9,7 @@ class QuestionsPage extends StatefulWidget {
 
 class _QuestionsPageState extends State<QuestionsPage> {
 
+  var _resController = TextEditingController();
   bool _cb1 = false;
   bool _cb2 = false;
   bool _cb3 = false;
@@ -15,6 +17,9 @@ class _QuestionsPageState extends State<QuestionsPage> {
   bool _cb5 = false;
   bool _cb6 = false;
   bool _cb7 = false;
+  int res = 0;
+  String zone;
+  Color col;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +35,7 @@ class _QuestionsPageState extends State<QuestionsPage> {
                   Theme.of(context).primaryColor,
                   Theme.of(context).accentColor,
                 ]
-            )
+            ),
         ),
         child: SingleChildScrollView(
           child: Column(children: <Widget>[
@@ -46,6 +51,11 @@ class _QuestionsPageState extends State<QuestionsPage> {
                 onChanged: (bool value){
                   setState(() {
                     this._cb1 = value;
+                    if(value == true){
+                      res++;
+                    }else{
+                      res--;
+                    }
                   });
                 },
                 value: this._cb1,
@@ -66,6 +76,11 @@ class _QuestionsPageState extends State<QuestionsPage> {
                 onChanged: (bool value){
                   setState(() {
                     this._cb2 = value;
+                    if(value == true){
+                      res++;
+                    }else{
+                      res--;
+                    }
                   });
                 },
                 value: this._cb2,
@@ -86,6 +101,11 @@ class _QuestionsPageState extends State<QuestionsPage> {
                 onChanged: (bool value){
                   setState(() {
                     this._cb3 = value;
+                    if(value == true){
+                      res++;
+                    }else{
+                      res--;
+                    }
                   });
                 },
                 value: this._cb3,
@@ -106,6 +126,11 @@ class _QuestionsPageState extends State<QuestionsPage> {
                 onChanged: (bool value){
                   setState(() {
                     this._cb4 = value;
+                    if(value == true){
+                      res++;
+                    }else{
+                      res--;
+                    }
                   });
                 },
                 value: this._cb4,
@@ -127,6 +152,11 @@ class _QuestionsPageState extends State<QuestionsPage> {
                 onChanged: (bool value){
                   setState(() {
                     this._cb5 = value;
+                    if(value == true){
+                      res++;
+                    }else{
+                      res--;
+                    }
                   });
                 },
                 value: this._cb5,
@@ -148,6 +178,11 @@ class _QuestionsPageState extends State<QuestionsPage> {
                 onChanged: (bool value){
                   setState(() {
                     this._cb6 = value;
+                    if(value == true){
+                      res++;
+                    }else{
+                      res--;
+                    }
                   });
                 },
                 value: this._cb6,
@@ -169,6 +204,11 @@ class _QuestionsPageState extends State<QuestionsPage> {
                 onChanged: (bool value){
                   setState(() {
                     this._cb7 = value;
+                    if(value == true){
+                      res++;
+                    }else{
+                      res--;
+                    }
                   });
                 },
                 value: this._cb7,
@@ -190,16 +230,32 @@ class _QuestionsPageState extends State<QuestionsPage> {
                 child: SizedBox(
                   width: data.size.width * 0.55,
                   child: RaisedButton(
+                    elevation: 30,
                     color: Colors.white,
                     padding: const EdgeInsets.all(8.0),
                     splashColor: Colors.amber,
-                    child: Text("SUBMIT".toUpperCase(),
+                    child: Text("NEXT".toUpperCase(),
                       style: TextStyle(fontSize: 24),
                     ),
-                    onPressed: () { // => Navigator.pushNamed(context, paymntRoute),
-                      /* if(_formkey.currentState.validate()) {
-                                Navigator.pushNamed(context, quesRoute);
-                            }*/
+                    onPressed: () {
+                      print(res);
+                      if(res == 0){
+                        zone = "green";
+                        col = Colors.green;
+                      }else if(res>=3){
+                        zone = "red";
+                        col = Colors.red;
+                      }else{
+                        zone = "yellow";
+                        col = Colors.yellow;
+                      }
+                      setState(() {
+                        _resController.text = zone;
+                      });
+                      var route = new MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                         ResultPage(value: _resController.text, col: col,),
+                      );
                       Navigator.pushNamed(context, resultRoute);
                     },
                     shape: RoundedRectangleBorder(

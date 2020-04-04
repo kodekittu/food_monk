@@ -91,10 +91,11 @@ class _DetailsPageState extends State<DetailsPage> {
                       child: SizedBox(
                         width: data.size.width * 0.55,
                         child: RaisedButton(
+                          elevation: 30,
                           color: Colors.white,
                           padding: const EdgeInsets.all(8.0),
                           splashColor: Colors.amber,
-                          child: Text("SUBMIT".toUpperCase(),
+                          child: Text("NEXT".toUpperCase(),
                             style: TextStyle(fontSize: 24),
                           ),
                           onPressed: () { // => Navigator.pushNamed(context, paymntRoute),

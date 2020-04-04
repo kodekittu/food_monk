@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodmonk/router.dart';
 
 class SharePage extends StatefulWidget {
   @override
@@ -26,10 +27,16 @@ class _SharePageState extends State<SharePage> {
             )
         ),
         child: Column(children: <Widget>[
-
-          SizedBox(height: data.size.height * 0.02),
+          SizedBox(height: data.size.height * 0.06),
+          Center(
+            child: Text(' Select the number of people\n          you’re living with', style: TextStyle(
+                color: Colors.black,
+                fontSize: 24.0,
+                fontWeight: FontWeight.bold
+            ),),
+          ),
           Padding(
-            padding: const EdgeInsets.all(50.0),
+            padding: const EdgeInsets.only(left:50.0),
             child: Row(children: <Widget>[
               Column(children: [0, 1, 2, 3, 4, 5, 6,7,8].map((int index) =>
                   Radio<int>(
@@ -44,7 +51,7 @@ class _SharePageState extends State<SharePage> {
               ),
               Column(children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(12.0),
                   child: Text("1",style: TextStyle(
                       color: Colors.black,
                       fontSize: 22.0,
@@ -52,7 +59,7 @@ class _SharePageState extends State<SharePage> {
                   ),),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(12.0),
                   child: Text("2", style: TextStyle(
                       color: Colors.black,
                       fontSize: 22.0,
@@ -60,7 +67,7 @@ class _SharePageState extends State<SharePage> {
                   ),),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(12.0),
                   child: Text("3", style: TextStyle(
                       color: Colors.black,
                       fontSize: 22.0,
@@ -68,48 +75,48 @@ class _SharePageState extends State<SharePage> {
                   ),),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text("1",style: TextStyle(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Text("4",style: TextStyle(
                       color: Colors.black,
                       fontSize: 22.0,
                       fontWeight: FontWeight.bold
                   ),),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text("2", style: TextStyle(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Text("5", style: TextStyle(
                       color: Colors.black,
                       fontSize: 22.0,
                       fontWeight: FontWeight.bold
                   ),),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text("3", style: TextStyle(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Text("6", style: TextStyle(
                       color: Colors.black,
                       fontSize: 22.0,
                       fontWeight: FontWeight.bold
                   ),),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text("1",style: TextStyle(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text("7",style: TextStyle(
                       color: Colors.black,
                       fontSize: 22.0,
                       fontWeight: FontWeight.bold
                   ),),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text("2", style: TextStyle(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text("8", style: TextStyle(
                       color: Colors.black,
                       fontSize: 22.0,
                       fontWeight: FontWeight.bold
                   ),),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text("3", style: TextStyle(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text("9 or more", style: TextStyle(
                       color: Colors.black,
                       fontSize: 22.0,
                       fontWeight: FontWeight.bold
@@ -119,12 +126,16 @@ class _SharePageState extends State<SharePage> {
             ],),
           ),
           SizedBox(
-            width: data.size.width * 0.65,
+            height: data.size.height *0.01,
+          ),
+          SizedBox(
+            width: data.size.width * 0.55,
             child: RaisedButton(
+              elevation: 30,
               color: Colors.white,
-              padding: const EdgeInsets.all(8.0),
-              child: Text("Submit".toUpperCase(), style: TextStyle(fontSize: 24),),
-              onPressed: () => {},// Navigator.pushNamed(context, detailRoute),
+              padding: const EdgeInsets.all(10.0),
+              child: Text("next".toUpperCase(), style: TextStyle(fontSize: 24),),
+              onPressed: () =>  Navigator.pushNamed(context, networkRoute),
               splashColor: Colors.amber,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30.0)

@@ -91,6 +91,7 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(
               width: double.infinity,
               child: RaisedButton(
+                elevation: 30,
                 color: Colors.white,
                 padding: const EdgeInsets.all(8.0),
                 child: Text("Login".toUpperCase(), style: TextStyle(fontSize: 24),),

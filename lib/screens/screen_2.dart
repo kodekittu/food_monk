@@ -77,11 +77,12 @@ class _LanguagePageState extends State<LanguagePage> {
               ],),
             ),
             SizedBox(
-              width: data.size.width * 0.65,
+              width: data.size.width * 0.55,
               child: RaisedButton(
+                elevation: 30,
                 color: Colors.white,
                 padding: const EdgeInsets.all(8.0),
-                child: Text("Submit".toUpperCase(), style: TextStyle(fontSize: 24),),
+                child: Text("NEXT".toUpperCase(), style: TextStyle(fontSize: 24),),
                 onPressed: () => Navigator.pushNamed(context, detailRoute),
                 splashColor: Colors.amber,
                 shape: RoundedRectangleBorder(
