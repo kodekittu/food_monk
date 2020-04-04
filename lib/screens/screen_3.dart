@@ -98,9 +98,10 @@ class _DetailsPageState extends State<DetailsPage> {
                             style: TextStyle(fontSize: 24),
                           ),
                           onPressed: () { // => Navigator.pushNamed(context, paymntRoute),
-                            if(_formkey.currentState.validate()) {
+                           /* if(_formkey.currentState.validate()) {
                                 Navigator.pushNamed(context, quesRoute);
-                            }
+                            }*/
+                            Navigator.pushNamed(context, quesRoute);
                           },
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30.0)
