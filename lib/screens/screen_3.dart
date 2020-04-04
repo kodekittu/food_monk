@@ -32,7 +32,7 @@ class _DetailsPageState extends State<DetailsPage> {
         child: Form(
           key: _formkey,
           child: Container(
-            color: Colors.white10,
+            color: Colors.white24,
             padding: EdgeInsets.all(6),
             child: SingleChildScrollView(padding: EdgeInsets.all(4),
               child: Column(
@@ -81,7 +81,7 @@ class _DetailsPageState extends State<DetailsPage> {
                       onSaved: (value) => cityController.text = value.trim(),
                       controller: cityController,
                       decoration: InputDecoration(
-                        hintText: 'City',
+                        labelText: 'City', hasFloatingPlaceholder: true,
                       ),
                     ),
                   ),
